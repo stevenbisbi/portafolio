@@ -13,8 +13,6 @@ import {
 } from "lucide-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"; // estilos extra (gradientes, colores, etc.)
-import profile from "./assets/profile.jpg";
-import restaurant from "./assets/restaurant.png";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("inicio");
@@ -25,7 +23,7 @@ const Portfolio = () => {
       id: 1,
       title: "Restaurant Platform",
       description: "Plataforma de gestion para restaurantes.",
-      image: restaurant,
+      image: "/restaurant.png",
       technologies: [
         "React",
         "Node.js",
@@ -207,7 +205,7 @@ const Portfolio = () => {
             height={400}
           >
             <img
-              src={profile}
+              src={"/Profile.jpg"}
               alt="Foto de perfil"
               width={250}
               height={250}
