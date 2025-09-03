@@ -13,8 +13,8 @@ export const projects = [
       "Redis",
       "PostgreSQL",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/stevenbisbi/Restaurant-App",
+    /* live: "#", */
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const projects = [
       "Frontend que consume una API Rest del videojuego The Legend Of Zelda.",
     image: "/API-zelda.PNG",
     technologies: ["React", "Bootstrap"],
-    github: "#",
+    github: "https://github.com/stevenbisbi/ZeldaApi",
     live: "https://zeldaapi.netlify.app/",
   },
   {
@@ -33,7 +33,7 @@ export const projects = [
       "Dashboard del clima con pronósticos detallados y visualización de datos meteorológicos.",
     image: "/EDM.PNG",
     technologies: ["HTML", "JavaScript", "SASS"],
-    github: "#",
+    github: "https://github.com/stevenbisbi/EDM-Festival",
     live: "https://steven-festival.netlify.app/",
   },
   {
@@ -43,7 +43,7 @@ export const projects = [
       "Dashboard del clima con pronósticos detallados y visualización de datos meteorológicos.",
     image: "landing-page.PNG",
     technologies: ["HTML", "CSS", "JavaScript"],
-    github: "#",
+    github: "https://github.com/stevenbisbi/Static-page",
     live: "https://proyecto-steven-sanchez-freelancer.netlify.app/",
   },
 ];
