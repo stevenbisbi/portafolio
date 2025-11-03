@@ -6,12 +6,12 @@ export function Skills() {
       category: "Frontend",
       items: [
         "React",
-        "Vue.js",
+        /* "Vue.js", */
         "Angular",
         "TypeScript",
         "Bootstrap",
         "SASS",
-        "Tailwind CSS",
+        /* "Tailwind CSS", */
         "HTML5",
         "CSS3",
         "JavaScript",
@@ -22,30 +22,36 @@ export function Skills() {
       category: "Backend",
       items: [
         "Node.js",
-        "Java",
+        /*  "Java", */
         "Python",
         "Express",
         "Django",
-        "GraphQL",
+        /* "GraphQL", */
         "REST APIs",
         "SQL",
         "NoSQL",
-        "Microservices",
+        /* "Microservices",
         "CI/CD",
         "Testing",
         "Agile",
-        "Azure",
+        "Azure", */
       ],
       icon: <Database className="text-success me-2" />,
     },
     {
       category: "Database",
-      items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis", "SQLite"],
+      items: [
+        "MongoDB",
+        "PostgreSQL",
+        "MySQL",
+        /* "Firebase", */ "Redis",
+        "SQLite",
+      ],
       icon: <Database className="text-warning me-2" />,
     },
     {
       category: "Tools",
-      items: ["Git", "Docker", "AWS", "Vercel", "Figma", "Jest"],
+      items: ["Git", "Docker" /* "AWS", "Vercel", "Figma", "Jest" */],
       icon: <Smartphone className="text-danger me-2" />,
     },
   ];
