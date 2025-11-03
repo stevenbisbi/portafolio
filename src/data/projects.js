@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: 5,
+    title: "Sistema de gestión para un negocio de mercado",
+    description:
+      "Sistemas para administrar inventario de productos, ventas, usuarios, reportes, transacciones etc. incluye autenticación y autorización de usuarios. Vista de administrador y staff.",
+    image: "POS.PNG",
+    technologies: ["React", "Boostrap", "Express", "MongoDB"],
+    github: "https://github.com/stevenbisbi/POS-backend",
+    github2: "https://github.com/stevenbisbi/POS-frontend",
+    live: "https://pos-frontend-qych.vercel.app/",
+  },
+  {
     id: 1,
     title: "Restaurant Platform",
     description: "Plataforma de gestion para restaurantes.",

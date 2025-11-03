@@ -34,6 +34,14 @@ export function Projects() {
                     <Github size={16} /> Código
                   </a>
                   <a
+                    href={p.github2}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-outline-light btn-sm"
+                  >
+                    <Github size={16} /> Código
+                  </a>
+                  <a
                     href={p.live}
                     target="_blank"
                     rel="noreferrer"
