@@ -56,7 +56,7 @@ export function Skills() {
     },
   ];
   return (
-    <section id="habilidades" className="py-5 bg-secondary bg-opacity-25">
+    <section id="skills" className="py-5 bg-secondary bg-opacity-25">
       <div className="container">
         <h2 className="fw-bold text-gradient text-center mb-5">Habilidades</h2>
         <div className="row g-4">

@@ -1,57 +1,33 @@
-import { Code } from "lucide-react";
-export function Hero() {
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
+export default function Hero() {
   return (
-    <section
-      id="inicio"
-      className="d-flex align-items-center justify-content-center vh-100 text-center hero-section"
-    >
-      <div>
-        <div
-          className="rounded-circle border-1 mx-auto mb-4"
-          width={300}
-          height={400}
-        >
-          <img
-            src={"/Profile.jpg"}
-            alt="Foto de perfil"
-            width={250}
-            height={250}
-            className="rounded-circle mx-auto shadow-lg"
-          />
+    <main className="section-grid hero">
+      <div className="content">
+        <div className="tag-box">
+          <div className="tag">Bienvenido ▲</div>
         </div>
-        <h1 className="display-4 fw-bold text-gradient">
-          Michael Steven Sanchez
+
+        <h1>
+          FULL-STACK <br /> DEVELOPER
         </h1>
-        <p className="lead">Desarrollador Full Stack</p>
-        <div className="icon-circle mx-auto mb-4">
-          <Code size={64} />
-        </div>
-        <p className="text-secondary mb-4">
-          Creando experiencias digitales excepcionales con código limpio y
-          diseño intuitivo. <hr /> Especializado en desarrollo web moderno y
-          soluciones tecnológicas innovadoras.
+
+        <p className="description">
+          Este es mi portafolio. Aquí encontrarás una muestra de mi trabajo, mis
+          conocimientos técnicos y mi pasión por la programación. ¡Explora y
+          descubre lo que puedo ofrecer!
         </p>
-        <div className="d-flex gap-3 justify-content-center">
-          <button
-            className="btn btn-primary px-4"
-            onClick={() => scrollToSection("proyectos")}
+
+        <div className="buttons">
+          <a href="https://github.com/stevenbisbi" className="btn-get-started">
+            GitHub &gt;
+          </a>
+          <a
+            href="https://www.linkedin.com/in/michae-s-2b302b117/"
+            className="btn-signing-main"
           >
-            Ver Proyectos
-          </button>
-          <button
-            className="btn btn-outline-light px-4"
-            onClick={() => scrollToSection("contacto")}
-          >
-            Contactar
-          </button>
+            Linkedin &gt;
+          </a>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
