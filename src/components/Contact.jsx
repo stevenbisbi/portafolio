@@ -25,8 +25,8 @@ export function Contact() {
           </div>
           <div className="linkedin p-4 text-center">
             <a
-              className=" text-center text-decoration-none"
-              href="https://www.linkedin.com/in/steven-s-2b302b117/"
+              className=" text-center text-decoration-none blank"
+              href="https://www.linkedin.com/in/michaelssb"
             >
               <DynamicIcon
                 name="linkedin"

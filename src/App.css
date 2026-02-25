@@ -284,3 +284,61 @@ spline-viewer {
   right: -30%;
   scale: 0.5;
 }
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .header {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 0;
+    display: none;
+  }
+
+  .navigation.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .spline-container {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .col-lg-6.spline-container {
+    position: relative;
+    height: 300px;
+    margin-top: 2rem;
+  }
+
+  spline-viewer {
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+    scale: 0.7;
+    width: 100%;
+  }
+
+  .spline-wrapper {
+    position: relative;
+    height: 300px;
+  }
+}
