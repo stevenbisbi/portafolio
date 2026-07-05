@@ -6,74 +6,64 @@ export function Skills() {
       category: "Frontend",
       items: [
         "React",
-        /* "Vue.js", */
         "Angular",
         "TypeScript",
         "Bootstrap",
         "SASS",
-        /* "Tailwind CSS", */
         "HTML5",
         "CSS3",
         "JavaScript",
       ],
-      icon: <Globe className="text-primary me-2" />,
+      icon: <Globe size={20} className="text-info" />,
     },
     {
       category: "Backend",
       items: [
         "Node.js",
-        /*  "Java", */
         "Python",
         "Express",
         "Django",
-        /* "GraphQL", */
         "REST APIs",
         "SQL",
         "NoSQL",
-        /* "Microservices",
-        "CI/CD",
-        "Testing",
-        "Agile",
-        "Azure", */
       ],
-      icon: <Database className="text-success me-2" />,
+      icon: <Database size={20} className="text-success" />,
     },
     {
       category: "Database",
-      items: [
-        "MongoDB",
-        "PostgreSQL",
-        "MySQL",
-        /* "Firebase", */ "Redis",
-        "SQLite",
-      ],
-      icon: <Database className="text-warning me-2" />,
+      items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "SQLite"],
+      icon: <Database size={20} className="text-warning" />,
     },
     {
       category: "Tools",
-      items: ["Git", "Docker" /* "AWS", "Vercel", "Figma", "Jest" */],
-      icon: <Smartphone className="text-danger me-2" />,
+      items: ["Git", "Docker"],
+      icon: <Smartphone size={20} className="text-danger" />,
     },
   ];
   return (
-    <section id="skills" className="py-5 bg-secondary bg-opacity-25">
+    <section id="skills" className="py-5 section-alt">
       <div className="container">
-        <h2 className="fw-bold text-gradient text-center mb-5">Habilidades</h2>
+        <div className="text-center mb-5">
+          <div className="eyebrow mb-2">Caja de herramientas</div>
+          <h2 className="fw-bold text-gradient section-heading fs-1">
+            Habilidades
+          </h2>
+        </div>
         <div className="row g-4">
           {skills.map((s, i) => (
-            <div key={i} className="col-md-3">
+            <div key={i} className="col-md-6 col-lg-3">
               <div className="card bg-dark text-light p-3 h-100">
-                <div className="d-flex align-items-center mb-2">
-                  {s.icon}
-                  <h5>{s.category}</h5>
+                <div className="d-flex align-items-center gap-2 mb-3">
+                  <span className="skill-category-icon">{s.icon}</span>
+                  <h5 className="mb-0">{s.category}</h5>
                 </div>
-                <ul className="list-unstyled">
+                <div className="skill-chip-list">
                   {s.items.map((item, j) => (
-                    <li key={j} className="text-secondary">
-                      • {item}
-                    </li>
+                    <span key={j} className="skill-chip">
+                      {item}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           ))}

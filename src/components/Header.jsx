@@ -1,59 +1,68 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const LINKS = [
+  { id: "about", label: "Sobre mí" },
+  { id: "projects", label: "Proyectos" },
+  { id: "skills", label: "Habilidades" },
+  { id: "contact", label: "Contacto" },
+];
 
 export default function Header() {
-  const [visible, setVisible] = useState(true);
   const [open, setOpen] = useState(false);
-  const timeoutRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    // Detectar si es móvil
-    const isMobile = window.innerWidth <= 992;
-    if (isMobile) return; // No aplicar auto-hide en móvil
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
 
-    const handleMouseMove = () => {
-      setVisible(true);
-
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      const scrollPosition = window.scrollY + 140;
+      let current = "";
+      for (const link of LINKS) {
+        const el = document.getElementById(link.id);
+        if (el && scrollPosition >= el.offsetTop) {
+          current = link.id;
+        }
       }
-
-      timeoutRef.current = setTimeout(() => {
-        setVisible(false);
-      }, 2000);
+      setActive(current);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const goTo = (id) => {
+    setOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className={`header ${visible ? "" : "hidden"}`}>
-      <h1>MSS</h1>
+    <div className={`header ${scrolled ? "scrolled" : ""}`}>
+      <a
+        className="brand"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <span className="brand-mark">MS</span>
+        <span className="brand-name">Michael Sánchez</span>
+      </a>
 
       <div className={`navigation ${open ? "active" : ""}`}>
-        <a href="#about" onClick={() => setOpen(false)}>
-          SOBRE MÍ
-        </a>
-        <a href="#projects" onClick={() => setOpen(false)}>
-          PROYECTOS
-        </a>
-        <a href="#skills" onClick={() => setOpen(false)}>
-          HABILIDADES
-        </a>
-        <a href="#contact" onClick={() => setOpen(false)}>
-          CONTACTO
-        </a>
+        {LINKS.map((link) => (
+          <a
+            key={link.id}
+            className={active === link.id ? "active" : ""}
+            onClick={() => goTo(link.id)}
+          >
+            {link.label.toUpperCase()}
+          </a>
+        ))}
       </div>
 
-      <div className="hamburger" onClick={() => setOpen(!open)}>
-        ☰
-      </div>
+      <button className="hamburger" onClick={() => setOpen(!open)}>
+        {open ? <X /> : <Menu />}
+      </button>
     </div>
   );
 }
