@@ -5,7 +5,7 @@ export const projects = [
     featured: true,
     description:
       "Sistema de gestión de procesos para una planta de fabricación de tubería: seguimiento de lotes por proceso, turnos parciales con reanudación entre operarios, programa de corte, control de calidad con detección automática de no conformidades y dashboards en tiempo real para supervisores y operarios.",
-    icon: "Factory",
+    image: "/tuberi1.png",
     technologies: [
       "React",
       "Vite",
